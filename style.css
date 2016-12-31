@@ -118,12 +118,12 @@
     background-color: #f1f1f1
 }
 
-/* Show the dropdown menu */
+/* Shows the dropdown menu (used main.js to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {
     display: block;
 }
 
-/* the watch it later button */
-.watchItLaterButton{
+/* the watch-it-later and the empty-watch-it-later buttons */
+.watchItLaterButton, .emptyWatchItLater{
     display: block;
 }
