@@ -1,9 +1,9 @@
-//toggles between hiding and showing the dropdown content//
+//When the user clicks on the button, toggle between hiding and showing the dropdown content//
 function dropdownMenuFunction() {
     document.getElementById("myDropdown").classList.toggle("show");
 }
 
-//close the dropdown menu if the user clicks outside of it//
+//Closes the dropdown menu if the user clicks outside of it//
 window.onclick = function(event) {
   if (!event.target.matches('.dropbtn')) {
 
@@ -19,17 +19,19 @@ window.onclick = function(event) {
 }
 
 
-//the variable "url" is empty yet, that's why it won't work if you click on the buttons//
-            var url = "";
+
+            var url = "http://146.185.158.18/fake_api.php";
             $.getJSON(url + "?callback=?", function(result){
-              
+
 //button handlers for live channels//
+                
                 $('.button-liveChannel').on('click', function(){
                     var displayedItemsListForLiveChannelButton = [];
                     $.each(result, function(i, v) {
                         if (v.isLive == true) {
-                            var displayedItem = '<a class=' + v.title + ' href="' + url + '/' + v.id +'"><div class="tiptext">' + v.title + '<div class="description">' + v.description + '</div></div></a>' + '<a href="#" itemTitle="'+ v.title +'"><img src=" '+ v.picture +' "></a>';
+                            var displayedItem = '<a class=' + v.title + ' href="' + url + '/' + v.id +'"><div class="tiptext">' + v.title + '<div class="description">' + v.description + '</div></div></a>' + '<a href="#" itemTitle="'+ v.title +'"><img src=" '+ v.picture +' "></a>' + '<button id="' +v.id+'" class="toWatchItLater">Watch it later</button>';
                             displayedItemsListForLiveChannelButton.push("<li>" + "liveChannelSorted: " + displayedItem + "</li>");
+                            
                         }
                     });
                     sortedDisplayedItemsListForLiveChannelButton = displayedItemsListForLiveChannelButton.sort();
@@ -47,6 +49,20 @@ window.onclick = function(event) {
                         $(this).children(".description").hide();
                     });
 
+                    $('.toWatchItLater').on('click', function(){
+                        var testId = parseInt($(this).attr('id'));
+                        if (!localStorage.testArray){
+                            localStorage.testArray = testId + " ";
+                            console.log(localStorage.testArray);
+                        }else if(localStorage.testArray.indexOf(testId) != -1){
+                            console.log("Already in the list.");
+                            console.log(localStorage.testArray);
+                        }else{
+                            localStorage.testArray = localStorage.testArray.concat(testId + " ");
+                            console.log(localStorage.testArray);
+                        }
+                    });
+
                 });
 
 
@@ -54,7 +70,7 @@ window.onclick = function(event) {
                     var displayedItemsListForLiveChannelButton = [];
                     $.each(result, function(i, v) {
                         if (v.isLive == true) {
-                            var displayedItem = '<a class=' + v.title + ' href="' + url + '/' + v.id +'"><div class="tiptext">' + v.title + '<div class="description">' + v.description + '</div></div></a>' + '<a href="#" itemTitle="'+ v.title +'"><img src=" '+ v.picture +' "></a>';
+                            var displayedItem = '<a class=' + v.title + ' href="' + url + '/' + v.id +'"><div class="tiptext">' + v.title + '<div class="description">' + v.description + '</div></div></a>' + '<a href="#" itemTitle="'+ v.title +'"><img src=" '+ v.picture +' "></a>' + '<button id="' +v.id+'" class="toWatchItLater">Watch it later</button>';
                             displayedItemsListForLiveChannelButton.push("<li>" + "liveChannelSorted: " + displayedItem + "</li>");
                         }
                     });
@@ -71,6 +87,21 @@ window.onclick = function(event) {
                         $(this).children(".description").hide();
                     });
 
+                    $('.toWatchItLater').on('click', function(){
+                        var testId = parseInt($(this).attr('id'));
+                        if (!localStorage.testArray){
+                            localStorage.testArray = testId + " ";
+                            console.log(localStorage.testArray);
+                        }else if(localStorage.testArray.indexOf(testId) != -1){
+                            console.log("Already in the list.");
+                            console.log(localStorage.testArray);
+                        }else{
+                            localStorage.testArray = localStorage.testArray.concat(testId + " ");
+                            console.log(localStorage.testArray);
+                        }
+                    });
+
+
                 });
 
 
@@ -78,7 +109,7 @@ window.onclick = function(event) {
                     var displayedItemsListForLiveChannelButton = [];
                     $.each(result, function(i, v) {
                         if (v.isLive == true) {
-                            var displayedItem = '<a class=' + v.title + ' href="' + url + '/' + v.id +'"><div class="tiptext">' + v.title + '<div class="description">' + v.description + '</div></div></a>' + '<a href="#" itemTitle="'+ v.title +'"><img src=" '+ v.picture +' "></a>';
+                            var displayedItem = '<a class=' + v.title + ' href="' + url + '/' + v.id +'"><div class="tiptext">' + v.title + '<div class="description">' + v.description + '</div></div></a>' + '<a href="#" itemTitle="'+ v.title +'"><img src=" '+ v.picture +' "></a>' + '<button id="' +v.id+'" class="toWatchItLater">Watch it later</button>';
                             displayedItemsListForLiveChannelButton.push("<li>" + "liveChannelSorted: " + displayedItem + "</li>");
                         }
                     });
@@ -93,6 +124,21 @@ window.onclick = function(event) {
                         $(this).children(".description").hide();
                     });
 
+                    $('.toWatchItLater').on('click', function(){
+                        var testId = parseInt($(this).attr('id'));
+                        if (!localStorage.testArray){
+                            localStorage.testArray = testId + " ";
+                            console.log(localStorage.testArray);
+                        }else if(localStorage.testArray.indexOf(testId) != -1){
+                            console.log("Already in the list.");
+                            console.log(localStorage.testArray);
+                        }else{
+                            localStorage.testArray = localStorage.testArray.concat(testId + " ");
+                            console.log(localStorage.testArray);
+                        }
+                    });
+
+
                 });
 
 
@@ -100,7 +146,7 @@ window.onclick = function(event) {
                     var displayedItemsListForLiveChannelButton = [];
                     $.each(result, function(i, v) {
                         if (v.isLive == true) {
-                            var displayedItem = '<a class=' + v.title + ' href="' + url + '/' + v.id +'"><div class="tiptext">' + v.title + '<div class="description">' + v.description + '</div></div></a>' + '<a href="#" itemTitle="'+ v.title +'"><img src=" '+ v.picture +' "></a>';
+                            var displayedItem = '<a class=' + v.title + ' href="' + url + '/' + v.id +'"><div class="tiptext">' + v.title + '<div class="description">' + v.description + '</div></div></a>' + '<a href="#" itemTitle="'+ v.title +'"><img src=" '+ v.picture +' "></a>' + '<button id="' +v.id+'" class="toWatchItLater">Watch it later</button>';
                             displayedItemsListForLiveChannelButton.push("<li>" + "liveChannelSorted: " + displayedItem + "</li>");
                         }
                     });
@@ -115,6 +161,21 @@ window.onclick = function(event) {
                         $(this).children(".description").hide();
                     });
 
+                    $('.toWatchItLater').on('click', function(){
+                        var testId = parseInt($(this).attr('id'));
+                        if (!localStorage.testArray){
+                            localStorage.testArray = testId + " ";
+                            console.log(localStorage.testArray);
+                        }else if(localStorage.testArray.indexOf(testId) != -1){
+                            console.log("Already in the list.");
+                            console.log(localStorage.testArray);
+                        }else{
+                            localStorage.testArray = localStorage.testArray.concat(testId + " ");
+                            console.log(localStorage.testArray);
+                        }
+                    });
+
+
                 });
 
 
@@ -122,7 +183,7 @@ window.onclick = function(event) {
                     var displayedItemsListForLiveChannelButton = [];
                     $.each(result, function(i, v) {
                         if (v.isLive == true) {
-                            var displayedItem = '<a class=' + v.viewers + ' href="' + url + '/' + v.id +'"><div class="tiptext">' + v.title + '<div class="description">' + v.description + '</div></div></a>' + '<a href="#" itemTitle="'+ v.title +'"><img src=" '+ v.picture +' "></a>';
+                            var displayedItem = '<a class=' + v.viewers + ' href="' + url + '/' + v.id +'"><div class="tiptext">' + v.title + '<div class="description">' + v.description + '</div></div></a>' + '<a href="#" itemTitle="'+ v.title +'"><img src=" '+ v.picture +' "></a>' + '<button id="' +v.id+'" class="toWatchItLater">Watch it later</button>';
                             displayedItemsListForLiveChannelButton.push(displayedItem);
                         }
                     });
@@ -146,6 +207,21 @@ window.onclick = function(event) {
                         $(this).children(".description").hide();
                     });
 
+                    $('.toWatchItLater').on('click', function(){
+                        var testId = parseInt($(this).attr('id'));
+                        if (!localStorage.testArray){
+                            localStorage.testArray = testId + " ";
+                            console.log(localStorage.testArray);
+                        }else if(localStorage.testArray.indexOf(testId) != -1){
+                            console.log("Already in the list.");
+                            console.log(localStorage.testArray);
+                        }else{
+                            localStorage.testArray = localStorage.testArray.concat(testId + " ");
+                            console.log(localStorage.testArray);
+                        }
+                    });
+
+
                 });
 
 
@@ -153,7 +229,7 @@ window.onclick = function(event) {
                     var displayedItemsListForLiveChannelButton = [];
                     $.each(result, function(i, v) {
                         if (v.isLive == true) {
-                            var displayedItem = '<a class=' + v.viewers + ' href="' + url + '/' + v.id +'"><div class="tiptext">' + v.title + '<div class="description">' + v.description + '</div></div></a>' + '<a href="#" itemTitle="'+ v.title +'"><img src=" '+ v.picture +' "></a>';
+                            var displayedItem = '<a class=' + v.viewers + ' href="' + url + '/' + v.id +'"><div class="tiptext">' + v.title + '<div class="description">' + v.description + '</div></div></a>' + '<a href="#" itemTitle="'+ v.title +'"><img src=" '+ v.picture +' "></a>' + '<button id="' +v.id+'" class="toWatchItLater">Watch it later</button>';
                             displayedItemsListForLiveChannelButton.push(displayedItem);
                         }
                     });
@@ -178,6 +254,21 @@ window.onclick = function(event) {
                         $(this).children(".description").hide();
                     });
 
+                    $('.toWatchItLater').on('click', function(){
+                        var testId = parseInt($(this).attr('id'));
+                        if (!localStorage.testArray){
+                            localStorage.testArray = testId + " ";
+                            console.log(localStorage.testArray);
+                        }else if(localStorage.testArray.indexOf(testId) != -1){
+                            console.log("Already in the list.");
+                            console.log(localStorage.testArray);
+                        }else{
+                            localStorage.testArray = localStorage.testArray.concat(testId + " ");
+                            console.log(localStorage.testArray);
+                        }
+                    });
+
+
                 });
 
 
@@ -185,7 +276,7 @@ window.onclick = function(event) {
                     var displayedItemsListForLiveChannelButton = [];
                     $.each(result, function(i, v) {
                         if (v.isLive == true) {
-                            var displayedItem = '<a class=' + v.location.country + v.location.city + ' href="' + url + '/' + v.id +'"><div class="tiptext">' + v.title + '<div class="description">' + v.description + '</div></div></a>' + '<a href="#" itemTitle="'+ v.title +'"><img src=" '+ v.picture +' "><div class="tiptextCountry">' + "Country: " + v.location.country + ", City: " + v.location.city + '<div class="coordinates"> coordinates: latitude: ' + v.location.coordinates.latitude + ', longitude: ' + v.location.coordinates.longitude + '</div></div></a>';
+                            var displayedItem = '<a class=' + v.location.country + v.location.city + ' href="' + url + '/' + v.id +'"><div class="tiptext">' + v.title + '<div class="description">' + v.description + '</div></div></a>' + '<a href="#" itemTitle="'+ v.title +'"><img src=" '+ v.picture +' "><div class="tiptextCountry">' + "Country: " + v.location.country + ", City: " + v.location.city + '<div class="coordinates"> coordinates: latitude: ' + v.location.coordinates.latitude + ', longitude: ' + v.location.coordinates.longitude + '</div></div></a>' + '<button id="' +v.id+'" class="toWatchItLater">Watch it later</button>';
                             displayedItemsListForLiveChannelButton.push("<li>" + "liveChannelSorted: " + displayedItem + "</li>");
                         }
                     });
@@ -206,6 +297,21 @@ window.onclick = function(event) {
                         $(this).children(".coordinates").hide();
                     });
 
+                    $('.toWatchItLater').on('click', function(){
+                        var testId = parseInt($(this).attr('id'));
+                        if (!localStorage.testArray){
+                            localStorage.testArray = testId + " ";
+                            console.log(localStorage.testArray);
+                        }else if(localStorage.testArray.indexOf(testId) != -1){
+                            console.log("Already in the list.");
+                            console.log(localStorage.testArray);
+                        }else{
+                            localStorage.testArray = localStorage.testArray.concat(testId + " ");
+                            console.log(localStorage.testArray);
+                        }
+                    });
+                    
+
                 });
 
 
@@ -215,7 +321,48 @@ window.onclick = function(event) {
                     $('.dropdown').fadeOut(0);
                     $('#liveChannelButton2').fadeOut(0);
                     $('#liveChannelButton0').fadeIn();
+                    document.getElementById("liveChannelButton0").innerHTML = "Show live channels!";
                     $(".button-liveChannel").removeClass('displayed');
+                });
+
+
+                $('.watchItLaterButton').on('click', function(){
+                    console.log(localStorage.testArray);
+                    var workArr = localStorage.testArray.split(' ').map(function(item) {return parseInt(item, 10);});
+                    console.log(workArr);
+                    
+                    displayedItemsListForWatchItLater = [];
+                    $.each(result, function(i, v) {
+                        if (workArr.indexOf(v.id) != -1) {
+                            var displayedItem = '<a class=' + v.viewers + ' href="' + url + '/' + v.id +'"><div class="tiptext">' + v.title + '<div class="description">' + v.description + '</div></div><div class="tiptextCountry">' + "Country: " + v.location.country + ", City: " + v.location.city + '<div class="coordinates"> coordinates: latitude: ' + v.location.coordinates.latitude + ', longitude: ' + v.location.coordinates.longitude + '</div></div><div class="viewed">' + v.viewers + '</div></a>' + '<a href="#" itemTitle="'+ v.title +'"><img src=" '+ v.picture +' "></a>';
+                            displayedItemsListForWatchItLater.push("<li>" + "myWatchItLaterList: " + displayedItem + "</li>");;
+                        }
+                    });
+
+                    sortedDisplayedItemsListForWatchItLater = displayedItemsListForWatchItLater.sort();
+                    $("#watchItLaterList").empty();
+                    $("#watchItLaterList").append(sortedDisplayedItemsListForWatchItLater);
+                    console.log(sortedDisplayedItemsListForWatchItLater);
+
+                    $(".tiptext").mouseover(function() {
+                        $(this).children(".description").show();
+                    }).mouseout(function() {
+                        $(this).children(".description").hide();
+                    });
+
+                    $(".tiptextCountry").mouseover(function() {
+                        $(this).children(".coordinates").show();
+                    }).mouseout(function() {
+                        $(this).children(".coordinates").hide();
+                    });
+
+                });
+
+// the empty-function doesn't work, if you click it before manipulating the watch-it-later list //
+                $('.emptyWatchItLater').on('click', function(){
+                    localStorage.testArray = "";
+                    $("#watchItLaterList").empty();
+                    alert("The list is empty");
                 });
 
 
@@ -231,5 +378,13 @@ window.onclick = function(event) {
                     if(!$(e.target).closest('.title-search-form').length){
                         $('#title-search-input').removeClass('form-search-input-open');
                     }
+                });
+            });
+
+
+//the watch-it-later function//
+            jQuery(function($){
+                $('.watchItLaterButton').click(function(){
+                    $("#watchItLaterList").append(localStorage.wILListTest);
                 });
             });
