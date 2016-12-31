@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Frontend frame for an API</title>
+        <title>Frontend frame for API's</title>
         <link rel="stylesheet" href="style.css"/>
     </head>
     <body>
@@ -10,10 +10,12 @@
         <script src="main.js"></script>
         <h1>DoktOrk</h1>
         <p><img src="horde_sign.gif"></p>
-
-        <button class="watchItLaterButton">My "watch it later" list</button>
-        <p>The "Watch it later" button not yet functional</p>
         
+        
+        <button class="watchItLaterButton">My "watch it later" list</button>
+        <ul id="watchItLaterList"></ul>
+        <button class="emptyWatchItLater">Empty my "watch it later" list</button>
+
         
         <button id="liveChannelButton0" class="button-liveChannel">Show live channels!</button>
         <button id="liveChannelButton4" class="button-liveChannel-refresh">Refresh live channels!</button>
@@ -45,7 +47,7 @@
 
         <div class="forms">
             <form class="title-search-form" action="" method="GET">
-                <input type="text" name="q" id="title-search-input" class="form-search-input" placeholder="Search for something..." dir"ltr">
+                <input type="text" name="q" id="title-search-input" class="form-search-input" placeholder="Search for titles..." dir"ltr">
                 <span id="search-trigger" class="form-search-submit">&#x1f50e;</span>
             </form>
         </div>       
