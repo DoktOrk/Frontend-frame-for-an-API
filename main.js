@@ -20,7 +20,7 @@ window.onclick = function(event) {
 
 
 
-            var url = "http://146.185.158.18/fake_api.php";
+            var url = "";
             $.getJSON(url + "?callback=?", function(result){
 
 //button handlers for live channels//
