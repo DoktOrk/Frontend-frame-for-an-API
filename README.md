@@ -1,5 +1,8 @@
 # Frontend-frame-for-an-API
-a frame of an API 
+### I wrote this frame for a real developer test task of a company.
+The `var url` is empty yet, that's why it __***won't work***__ if you click on the buttons. This is because I don't know if the API is public. 
+The functions are tested and working .
 
-The variable "url" is empty yet, that's why it won't work if you click on the buttons.
-This is because I wote this for a real developer test task of a company and I don't know, if the API is public.
+Issues to fix:
+- [ ] the whole styling
+- [ ] reengineering the code to "keep it DRY"
