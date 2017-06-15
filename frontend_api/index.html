@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Frontend frame for API's</title>
+        <link rel="stylesheet" href="style.css"/>
+    </head>
+    <body>
+        <script src="jquery-2.2.4.js"></script>
+        <script src="main.js"></script>
+        <h1>DoktOrk</h1>
+        <p><img src="horde_sign.gif"></p>
+        
+        
+        <button class="watchItLaterButton">My "watch it later" list</button>
+        <ul id="watchItLaterList"></ul>
+        <button class="emptyWatchItLater">Empty my "watch it later" list</button>
+
+        
+        <button id="liveChannelButton0" class="button-liveChannel">Show live channels!</button>
+        <button id="liveChannelButton4" class="button-liveChannel-refresh">Refresh live channels!</button>
+        
+        <div class="dropdown">
+            <button onclick="dropdownMenuFunction()" class="dropbtn">Order and sort menu</button>
+            <div id="myDropdown" class="dropdown-content">
+                <button href="#" class="button-liveChannel-order-asc">Order live channels alphabetically descendent!</button>
+                <button href="#" class="button-liveChannel-order-desc">Order live channels alphabetically ascendent!</button>
+                <button href="#" class="button-liveChannel-view-desc">Most viewed live channels!</button>
+                <button href="#" class="button-liveChannel-view-asc">Least viewed live channels!</button>
+                <button href="#" class="button-liveChannel-location-asc">Order live channels by countries!</button>
+            </div>
+        </div>
+
+        <button id="liveChannelButton2" class="button-liveChannel-hide">Hide live channels!</button>
+        <ul id="displayedLiveChannelButton"></ul>
+
+        
+        <button id="offlineChannelButton0" class="button-offlineChannel">Show offline channels!</button>
+        <button id="offlineChannelButton1" class="button-offlineChannel-order-asc">Order offline channels! (currently: ascendent)</button>
+        <button id="offlineChannelButton3" class="button-offlineChannel-order-desc">Order offline channels! (currently: descendent)</button>
+        <button id="offlineChannelButton2" class="button-offlineChannel-hide">Hide offline channels!</button>
+        <ul id="displayedofflineChannelButton"></ul>
+
+        <p>Here will come the other buttons...</p>
+
+        <p>The search function is not yet functional</p>
+
+        <div class="forms">
+            <form class="title-search-form" action="" method="GET">
+                <input type="text" name="q" id="title-search-input" class="form-search-input" placeholder="Search for titles..." dir"ltr">
+                <span id="search-trigger" class="form-search-submit">&#x1f50e;</span>
+            </form>
+        </div>       
+
+    </body>
+</html>

@@ -1,0 +1,130 @@
+/* searchbox */
+
+.forms{
+    padding: 0px 0px 0px;
+}
+
+.form-search-input{
+    width: 0px;
+    height: 55px;
+    border: 0px;
+    outline: 0px;
+    font-size: 21px;
+    padding: 0px;
+    color: #151515;
+    transition: all 0.5s;
+}
+
+.form-search-input-open{
+    width: 410px !important;
+    padding: 0px 0px 0px 20px !important;
+    display: initial !important;
+}
+
+.form-search-submit{
+    display: inline-block;
+    width: 55px;
+    height: 43px;
+    border: 0px;
+    outline: 0px;
+    background-color: #151515;
+    font-size: 21px;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+}
+
+/* channelbuttons */
+#liveChannelButton1, #liveChannelButton2, #liveChannelButton3, #liveChannelButton4, #liveChannelButton5, #liveChannelButton6{
+    display: none;
+}
+
+.button-liveChannel, .button-liveChannel-refresh, .button-liveChannel-order-asc, .button-liveChannel-order-desc, .button-liveChannel-view-desc, .button-liveChannel-view-asc, .button-liveChannel-location-asc, .button-liveChannel-hide{
+    cursor: pointer;
+}
+
+#offlineChannelButton1, #offlineChannelButton2, #offlineChannelButton3{
+    display: none;
+}
+
+
+.tiptext {
+    display: inline;
+    font-weight: bold;
+    position: relative;
+}
+.description {
+    margin:0px;
+    display:none;
+    position:absolute;
+    left: 0px;
+    border:1px solid #000;
+    font-weight: none;
+    width:auto;
+    height:auto;
+}
+
+.tiptextCountry {
+    display: inline;
+    font-weight: bold;
+    position: relative;
+}
+.coordinates {
+    margin:0px;
+    display:none;
+    position:absolute;
+    left: 0px;
+    border:1px solid #000;
+    font-weight: none;
+    width:auto;
+    height:auto;
+}
+
+/* Dropdown Button */
+.dropbtn {
+    cursor: pointer;
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+    background-color: darkgrey;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: none;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+/* Links inside the dropdown -->!!! */
+.dropdown-content button {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover -->!!! */
+.dropdown-content a:hover {
+    background-color: #f1f1f1
+}
+
+/* Shows the dropdown menu (used main.js to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {
+    display: block;
+}
+
+/* the watch-it-later and the empty-watch-it-later buttons */
+.watchItLaterButton, .emptyWatchItLater{
+    display: block;
+}
+
