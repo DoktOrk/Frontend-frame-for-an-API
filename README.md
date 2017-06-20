@@ -7,3 +7,5 @@ The program uses the local storage, so you __***can not run***__ this from githu
 Issues to fix:
 - [ ] the whole styling
 - [ ] reengineering the code to "keep it DRY"
+
+### For preview please check the [screenshots](https://github.com/DoktOrk/Frontend-frame-for-an-API/tree/master/screenshots).
